@@ -1,4 +1,4 @@
-#include "CYD2432S024C.h"
+#include "CYD2432S028.h"
 #include "hal/YellowDisplay.h"
 #include "hal/YellowDisplayConstants.h"
 #include "hal/YellowSdCard.h"
