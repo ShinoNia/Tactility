@@ -10,6 +10,8 @@
 #define TT_BOARD_HARDWARE &lilygo_tdeck
 #elif defined(CONFIG_TT_BOARD_CYD_2432S024C)
 #include "CYD2432S024C.h"
+#elif defined(CONFIG_TT_BOARD_CYD_2432S028)
+#include "CYD2432S028.h"
 #define TT_BOARD_HARDWARE &cyd_2432s024c_config
 #elif defined(CONFIG_TT_BOARD_CYD_2432S032C)
 #include "CYD2432S032C.h"
