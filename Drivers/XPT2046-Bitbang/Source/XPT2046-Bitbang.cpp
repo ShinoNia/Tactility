@@ -263,12 +263,15 @@ bool XPT2046_Bitbang::isTouched() {
 
 void XPT2046_Bitbang::touchReadCallback(lv_indev_t* indev, lv_indev_data_t* data) {
     XPT2046_Bitbang* touch = static_cast<XPT2046_Bitbang*>(lv_indev_get_user_data(indev));
-    
+
     if (touch && touch->isTouched()) {
         Point point = touch->getTouch();
         data->point.x = point.x;
         data->point.y = point.y;
         data->state = LV_INDEV_STATE_PRESSED;
+
+        // Log the touched coordinates
+        TT_LOG_I(TAG, "Touched at x=%d, y=%d", point.x, point.y);
     } else {
         data->state = LV_INDEV_STATE_RELEASED;
     }
