@@ -208,11 +208,11 @@ void XPT2046_Bitbang::saveCalibration() {
 }
 
 void XPT2046_Bitbang::setCalibration(int xMin, int yMin, int xMax, int yMax) {
-    // Ignore arguments and use the correct measured calibration values
-    cal.xMin = 429;
-    cal.yMin = 822;
-    cal.xMax = 1249;
-    cal.yMax = 931;
+    // Ignore arguments and use the provided calibration values
+    cal.xMin = 1806;
+    cal.yMin = 1855;
+    cal.xMax = 196;
+    cal.yMax = 158;
 
     TT_LOG_I(TAG, "Hardcoded calibration set: xMin=%d, yMin=%d, xMax=%d, yMax=%d",
              cal.xMin, cal.yMin, cal.xMax, cal.yMax);
