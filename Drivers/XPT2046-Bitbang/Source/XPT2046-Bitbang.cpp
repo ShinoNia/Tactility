@@ -204,12 +204,14 @@ void XPT2046_Bitbang::saveCalibration() {
 }
 
 void XPT2046_Bitbang::setCalibration(int xMin, int yMin, int xMax, int yMax) {
-    cal.xMin = xMin;
-    cal.yMin = yMin;
-    cal.xMax = xMax;
-    cal.yMax = yMax;
-    TT_LOG_I(TAG, "Manual calibration set: xMin=%d, yMin=%d, xMax=%d, yMax=%d", 
-             xMin, yMin, xMax, yMax);
+    // Ignore arguments and use the correct measured calibration values
+    cal.xMin = 429;
+    cal.yMin = 822;
+    cal.xMax = 1249;
+    cal.yMax = 931;
+
+    TT_LOG_I(TAG, "Hardcoded calibration set: xMin=%d, yMin=%d, xMax=%d, yMax=%d",
+             cal.xMin, cal.yMin, cal.xMax, cal.yMax);
 }
 
 Point XPT2046_Bitbang::getTouch() {
