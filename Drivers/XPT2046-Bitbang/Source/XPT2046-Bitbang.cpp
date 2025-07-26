@@ -26,7 +26,11 @@ XPT2046_Bitbang* XPT2046_Bitbang::instance = nullptr;
 XPT2046_Bitbang::XPT2046_Bitbang(std::unique_ptr<Configuration> inConfiguration) 
     : configuration(std::move(inConfiguration)) {
     assert(configuration != nullptr);
+    configuration->swapXy = true;   // rotate axes
+    configuration->mirrorX = false; // no horizontal flip
+    configuration->mirrorY = false;  // vertical flip
 }
+
 
 bool XPT2046_Bitbang::start(lv_display_t* display) {
     TT_LOG_I(TAG, "Starting XPT2046 Bitbang touch driver");
